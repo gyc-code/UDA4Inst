@@ -1,0 +1,63 @@
+_BASE_: ../maskformer2_R50_bs16_90k.yaml
+MODEL:
+  BACKBONE:
+    # FREEZE_AT: 0
+    NAME: "D2dinoV2"
+  DINOV2:
+    PRETRAIN_IMG_SIZE: 512
+    PATCH_SIZE: 16
+    EMBED_DIM: 1024
+    DEPTHS: 24
+    NUM_HEADS: 16
+    MLP_RATIO: 4
+    QKV_BIAS: True
+    FFN_BIAS: True
+    PROJ_BIAS: True
+    INIT_VALUES: 1e-05
+    FFN_LAYER: "mlp"
+    BLOCK_CHUNKS: 0
+  SEM_SEG_HEAD:
+    IN_FEATURES: ["res7", "res11", "res15", "res23"]
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: ["res11", "res15", "res23"]
+  # WEIGHTS: "pretrain/dinov2_512x512_converted_detectron2.pth" #"./pretrain/dinov2_vitl14_pretrain.pth"
+  WEIGHTS: "output_vlm/urbansyn_not_freeze/model_final.pth" #"./pretrain/dinov2_vitl14_pretrain.pth"
+
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+  MASK_FORMER:
+    NUM_OBJECT_QUERIES: 200
+    FROZE_BACKBONE: False
+SOLVER:
+  IMS_PER_BATCH: 3
+  CHECKPOINT_PERIOD: 90000
+  WARMUP_FACTOR: 0.5
+  WARMUP_ITERS: 0
+  BASE_LR: 0.0001
+  MAX_ITER: 90000
+INPUT:
+  MIN_SIZE_TRAIN: !!python/object/apply:eval ["[int(x * 0.1 * 1024) for x in range(5, 20)]"] #(5, 21)
+  MIN_SIZE_TRAIN_SAMPLING: "choice"
+  MIN_SIZE_TEST: 1024
+  MAX_SIZE_TRAIN: 2048 # max 是 2048的话，min_size_train里面尺寸不起作用，因为会超过2028，再被scale到2048. 所以原来设置是4096
+  MAX_SIZE_TEST: 2048
+  CROP:
+    ENABLED: True
+    TYPE: "absolute"
+    SIZE:  (512, 512)
+DATASETS:
+  TRAIN: ("uda_syn_real_urbansyn_instance_seg_train_eval_cityscapes",) #("urbansyn_instance_seg_train",)
+  #('urbansyn_category_human_cycle_instance_seg_train',)
+  # ("uda_syn_real_urbansyn_instance_seg_train",)
+  #("synscapes_human_cycle_instance_seg_train",)
+  #("synscapes_instance_seg_train",) 
+  #("urbansyn_vehicle_instance_seg_train",)
+  # ("uda_syn_real_vehicle_instance_seg_train",)
+  # ("uda_syn_real_human_cycle_instance_seg_train",)
+  # #("uda_syn_real_instance_seg_train",) 
+  #("urbansyn_vehicle_instance_seg_train",)
+  # ("uda_syn_real_human_cycle_instance_seg_train",)
+  TEST: ("cityscapes_fine_instance_seg_val",)
+TEST:
+  EVAL_PERIOD: 5000
+OUTPUT_DIR: "./output_vlm/debug"
+SAVE_INSTANCE_VISUALIZATION: True

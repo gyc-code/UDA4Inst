@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=2 python train_net.py --num-gpus 1 --dist-url   tcp://127.0.0.1:50160 --config-file configs/cityscapes/instance-segmentation/swin/maskformer2_swin_large_IN21k_384_bs16_90k_uda.yaml  DATASETS.TRAIN "('urbansyn_full_category_instance_seg_train',)"    OUTPUT_DIR ./output/category/urbansyn_full_glip >> ./output/category/urbansyn_full_glip.txt

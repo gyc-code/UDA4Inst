@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=1 python train_net.py --num-gpus 1 --dist-url   tcp://127.0.0.1:50160 --config-file configs/cityscapes/instance-segmentation/swin/maskformer2_swin_large_IN21k_384_bs16_90k_uda.yaml OUTPUT_DIR ./output

@@ -1,0 +1,58 @@
+_BASE_: ../maskformer2_R50_bs16_90k.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2SwinTransformer"
+  SWIN:
+    EMBED_DIM: 192
+    DEPTHS: [2, 2, 18, 2]
+    NUM_HEADS: [6, 12, 24, 48]
+    WINDOW_SIZE: 12
+    APE: False
+    DROP_PATH_RATE: 0.3
+    PATCH_NORM: True
+    PRETRAIN_IMG_SIZE: 384
+  WEIGHTS: "./pretrain/coco-mask2formwe-200queries-swinL-100epoch-model_final_e5f453.pkl"
+  # WEIGHTS: "./output/smartmix/urbansyn_only_source_range_5_10/model_final.pth"
+  #"pretrain/coco-mask2formwe-200queries-swinL-100epoch-model_final_e5f453.pkl" # 
+  ##  #"swin_large_patch4_window12_384_22k.pkl"
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+  MASK_FORMER:
+    NUM_OBJECT_QUERIES: 200
+SOLVER:
+  IMS_PER_BATCH: 3
+  CHECKPOINT_PERIOD: 10000
+  WARMUP_FACTOR: 0.5
+  WARMUP_ITERS: 1500
+  BASE_LR: 0.0001
+  MAX_ITER: 40000
+
+
+INPUT:
+  MIN_SIZE_TRAIN: !!python/object/apply:eval ["[int(x * 0.1 * 1024) for x in range(5, 10)]"] #(5, 21)
+  MIN_SIZE_TRAIN_SAMPLING: "choice"
+  MIN_SIZE_TEST: 1024
+  MAX_SIZE_TRAIN: 4096 # max 是 2048的话，min_size_train里面尺寸不起作用，因为会超过2028，再被scale到2048. 所以原来设置是4096 
+  MAX_SIZE_TEST: 2048
+  CROP:
+    ENABLED: True
+    TYPE: "absolute"
+    SIZE:  (512, 1024)  # 1024*1024 will cause shape mismatch in UDA
+
+DATASETS:
+  TRAIN: ('cityscapes_fine_instance_seg_train',) 
+  # ("uda_syn_real_instance_seg_train_eval_cityscapes",)
+  #("synscapes_human_cycle_instance_seg_train_eval_cityscapes",)
+  #("synscapes_instance_seg_train_eval_cityscapes",) 
+  #("urbansyn_vehicle_instance_seg_train_eval_cityscapes",)
+  # ("uda_syn_real_vehicle_instance_seg_train_eval_cityscapes",)
+  # ("uda_syn_real_human_cycle_instance_seg_train_eval_cityscapes",)
+  # #("uda_syn_real_instance_seg_train_eval_cityscapes",) 
+  #("urbansyn_vehicle_instance_seg_train_eval_cityscapes",) 
+  #("urbansyn_instance_seg_train_eval_cityscapes",) 
+  # ("uda_syn_real_human_cycle_instance_seg_train_eval_cityscapes",)
+  TEST: ("cityscapes_fine_instance_seg_val",)
+TEST:
+  EVAL_PERIOD: 500000
+OUTPUT_DIR: "./output/urbansyn_from_scratch"
+# VIS_PERIOD: 1

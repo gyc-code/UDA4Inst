@@ -1,0 +1,5 @@
+CUDA_VISIBLE_DEVICES=7 python train_net.py --num-gpus 1 --dist-url   tcp://127.0.0.1:50161 --config-file configs/cityscapes/instance-segmentation/swin/maskformer2_swin_large_IN21k_384_bs16_90k_kitti.yaml  DATASETS.TRAIN "('urbansyn_instance_seg_train',)"   OUTPUT_DIR ./output/a_kitti_swinL/urbansyn_sourceponly_kitti_40k >> ./output/a_kitti_swinL/urbansyn_sourceponly_kitti_40k.txt &
+
+CUDA_VISIBLE_DEVICES=7 python train_net.py --num-gpus 1 --dist-url   tcp://127.0.0.1:50162 --config-file configs/cityscapes/instance-segmentation/swin/maskformer2_swin_large_IN21k_384_bs16_90k_kitti.yaml  DATASETS.TRAIN "('synscapes_instance_seg_train',)"  OUTPUT_DIR ./output/a_kitti_swinL/synscapes_sourceponly_kitti_40k >> ./output/a_kitti_swinL/synscapes_sourceponly_kitti_40k.txt &
+
+CUDA_VISIBLE_DEVICES=2 python train_net.py --num-gpus 1 --dist-url   tcp://127.0.0.1:50163 --config-file configs/cityscapes/instance-segmentation/swin/maskformer2_swin_large_IN21k_384_bs16_90k_kitti.yaml  DATASETS.TRAIN "('synthia_instance_seg_train',)"  OUTPUT_DIR ./output/a_kitti_swinL/synthia_sourceponly_kitti_40k >> ./output/a_kitti_swinL/synthia_sourceponly_kitti_40k.txt
