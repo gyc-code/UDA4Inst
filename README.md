@@ -2,7 +2,15 @@
 
 [[`arXiv`](https://arxiv.org/abs/2405.09682)] [[`Project`](https://github.com/gyc-code/UDA4Inst)] [[`BibTeX`](...)]
 
+# Architecture
+[Fig2.pdf](https://github.com/user-attachments/files/19905592/Fig2.pdf)
+
+[Fig3.pdf](https://github.com/user-attachments/files/19905596/Fig3.pdf)
+
+
+
 ### Features
+
 * A UDA architecture for instance segmentation from synthetic domain to real domain.
 * Support synthetic and real domain segmentation datasets: Urbansyn, Synscapes, SYNTHIA, Cityscapes, KITTI360.
 
