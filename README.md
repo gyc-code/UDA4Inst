@@ -1,11 +1,11 @@
 # UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation
+![fig1.png](Fig1.png)
 
 [[`arXiv`](https://arxiv.org/abs/2405.09682)] [[`Project`](https://github.com/gyc-code/UDA4Inst)] [[`BibTeX`](...)]
 
 # Architecture
-![fig1.png](Fig1.png)
-
-[Fig2.pdf](Fig2.png)
+![fig2.png](Fig2.jpg)
+![Fig3.pdf](Fig3.jpg)
 
 
 
