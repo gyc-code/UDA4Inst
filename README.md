@@ -9,20 +9,18 @@
 <center>
   
 # Architecture
-<center>
-<img src="Fig2-1.png" alt="uda4inst pipeline" width="50%">
-<center>
   
 <div align="center">
-<img src="Fig2-1.png" alt="uda4inst pipeline" width="50%">
+<img src="Fig2_1.png" alt="uda4inst pipeline" width="50%">
 <br>
 <em>uda4inst pipeline</em>
 </div>
 
-  
-<center>
-<img src="Fig3-1.jpg" alt="mixing" width="50%">
-<center>
+<div align="center">
+<img src="Fig3-1.jpg" alt="mixing training module" width="50%">
+<br>
+<em>uda4inst pipeline</em>
+</div>
 
 
 ### Features
