@@ -4,9 +4,11 @@
 ✅ [Project Page](https://github.com/gyc-code/UDA4Inst) | 📄 [PDF](https://arxiv.org/pdf/2405.09682) | ✨ [DOI](...)  
 
 
-<center>
+<div align="center">
 <img src="Fig1.png" alt="性能提升" width="50%">
-<center>
+<br>
+<em>instance segmentation performance improvement</em>
+</div>
   
 # Architecture
   
@@ -19,7 +21,7 @@
 <div align="center">
 <img src="Fig3-1.jpg" alt="mixing training module" width="50%">
 <br>
-<em>uda4inst pipeline</em>
+<em>mixing training module</em>
 </div>
 
 
