@@ -1,15 +1,20 @@
-# UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation
+**[UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation]([论文PDF链接](https://arxiv.org/pdf/2405.09682))**  
+*Yachan Guo, Yi Xiao, Danna Xue, Jose Luis Gomez Zurita, Antonio M López*  
+**	Accepted at IEEE Intelligent Vehicles Symposium (IV 2025) as an oral presentation**, 2025  
+✅ [Project Page](https://github.com/gyc-code/UDA4Inst) | 📄 [PDF](https://arxiv.org/pdf/2405.09682) | ✨ [DOI](...)  
 
+
+<center>
 <img src="Fig1.png" alt="性能提升" width="50%">
-
-[[`arXiv`](https://arxiv.org/abs/2405.09682)] [[`Project`](https://github.com/gyc-code/UDA4Inst)] [[`BibTeX`](...)]
-
+<center>
+  
 # Architecture
-
+<center>
 <img src="Fig2.jpg" alt="uda4inst pipeline" width="50%">
-
+<center>
+<center>
 <img src="Fig3.jpg" alt="mixing" width="50%">
-
+<center>
 
 
 ### Features
@@ -36,18 +41,19 @@ Code is largely based on Mask2Former.
 Shield: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 The majority of Mask2Former is licensed under a [MIT License](LICENSE).
 
-## <a name="CitingMask2Former"></a>Citing Mask2Former
+# Research Foundation
+This repository is the official implementation of:  
 
-If you use Mask2Former in your research or wish to refer to the baseline results published in the [Model Zoo](MODEL_ZOO.md), please use the following BibTeX entry.
 
-```BibTeX
+
+## BibTeX
+```bibtex
 @article{guo2024uda4inst,
   title={UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation},
   author={Guo, Yachan and Xiao, Yi and Xue, Danna and Zurita, Jose Luis Gomez and L{\'o}pez, Antonio M},
   journal={arXiv preprint arXiv:2405.09682},
   year={2024}
 }
-```
 
 ## Acknowledgement
 
