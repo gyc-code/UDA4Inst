@@ -69,14 +69,13 @@ The majority of Mask2Former is licensed under a [MIT License](LICENSE).
 ## BibTeX
 If you use our work in your research, please cite our paper:
 
-IV2025(TO BE UPDATED)
+IV2025
 
 ```bibtex
 @inproceedings{guo2025uda4inst,
   title={UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation},
   author={Guo, Yachan and Xiao, Yi and Xue, Danna and Zurita, Jose Luis Gomez and L{\'o}pez, Antonio M},
-  booktitle={2025 IEEE intelligent vehicles symposium},
-  pages={},
+  booktitle={IEEE Intelligent Vehicles Symposium (IV)},
   year={2025},
   organization={IEEE}
 }
