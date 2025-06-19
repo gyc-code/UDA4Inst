@@ -1,7 +1,5 @@
 # UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation
 
-**[UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation]([论文PDF链接](https://arxiv.org/pdf/2405.09682))**  
-
 *Yachan Guo, Yi Xiao, Danna Xue, Jose Luis Gomez Zurita, Antonio M López*  
 
 **	Accepted at IEEE Intelligent Vehicles Symposium (IV 2025) as an oral presentation**, 2025  
@@ -15,7 +13,7 @@
 <em>instance segmentation performance improvement</em>
 </div>
   
-# Architecture
+## Architecture
   
 <div align="center">
 <img src="Fig2_1.png" alt="uda4inst pipeline" width="50%">
@@ -41,12 +39,18 @@ See [installation instructions](INSTALL.md).
 
 ## Getting Started
 ### Train
+```
 bash train_net.sh
+```
 
+### demo
+```
+python demo_catogory_single.py
+```
 
-## Model Zoo and Baselines
+// ## Model Zoo and Baselines
 
-We provide a large set of baseline results and trained models available for download in the [Mask2Former Model Zoo](MODEL_ZOO.md).
+// We provide a large set of baseline results and trained models available for download in the [Mask2Former Model Zoo](MODEL_ZOO.md).
 
 ## License
 
@@ -54,19 +58,24 @@ Code is largely based on Mask2Former.
 Shield: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 The majority of Mask2Former is licensed under a [MIT License](LICENSE).
 
-# Research Foundation
-This repository is the official implementation of:  
-
-
 
 ## BibTeX
-```bibtex
-@article{guo2024uda4inst,
+arXIV:
+  @article{guo2024uda4inst,
+    title={UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation},
+    author={Guo, Yachan and Xiao, Yi and Xue, Danna and Zurita, Jose Luis Gomez and L{\'o}pez, Antonio M},
+    journal={arXiv preprint arXiv:2405.09682},
+    year={2024}
+  }
+
+IV2025:
+@article{guo2025uda4inst,
   title={UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation},
   author={Guo, Yachan and Xiao, Yi and Xue, Danna and Zurita, Jose Luis Gomez and L{\'o}pez, Antonio M},
-  journal={arXiv preprint arXiv:2405.09682},
-  year={2024}
+  journal={IEEE Intelligent Vehicles Symposium},
+  year={2025}
 }
+
 
 ## Acknowledgement
 
