@@ -43,14 +43,21 @@ See [installation instructions](INSTALL.md).
 bash train_net.sh
 ```
 
-### demo
+### test with single model
+
 ```
 python demo_catogory_single.py
 ```
 
-// ## Model Zoo and Baselines
+### test with two category models
 
-// We provide a large set of baseline results and trained models available for download in the [Mask2Former Model Zoo](MODEL_ZOO.md).
+```
+python demo_catogory_fuse.py
+```
+
+## Model Zoo and Baselines
+
+We will provide a large set of baseline results and trained models available for download soon.
 
 ## License
 
@@ -61,21 +68,24 @@ The majority of Mask2Former is licensed under a [MIT License](LICENSE).
 
 ## BibTeX
 arXIV:
-  @article{guo2024uda4inst,
-    title={UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation},
-    author={Guo, Yachan and Xiao, Yi and Xue, Danna and Zurita, Jose Luis Gomez and L{\'o}pez, Antonio M},
-    journal={arXiv preprint arXiv:2405.09682},
-    year={2024}
-  }
+```bibtex
+@article{guo2024uda4inst,
+  title={UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation},
+  author={Guo, Yachan and Xiao, Yi and Xue, Danna and Zurita, Jose Luis Gomez and L{\'o}pez, Antonio M},
+  journal={arXiv preprint arXiv:2405.09682},
+  year={2024}
+}
+```
 
 IV2025:
+```bibtex
 @article{guo2025uda4inst,
   title={UDA4Inst: Unsupervised Domain Adaptation for Instance Segmentation},
   author={Guo, Yachan and Xiao, Yi and Xue, Danna and Zurita, Jose Luis Gomez and L{\'o}pez, Antonio M},
   journal={IEEE Intelligent Vehicles Symposium},
   year={2025}
 }
-
+```
 
 ## Acknowledgement
 
