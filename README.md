@@ -68,6 +68,7 @@ The majority of Mask2Former is licensed under a [MIT License](LICENSE).
 
 ## BibTeX
 If you use our work in your research, please cite our paper:
+
 IV2025(TO BE UPDATED)
 
 ```bibtex
