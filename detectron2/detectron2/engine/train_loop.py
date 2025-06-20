@@ -621,7 +621,7 @@ class AMPTrainer(SimpleTrainer):
                     else:
                         t2s_mix_losses = sum(t2s_mix_loss_dict.values())
                     # unite_loss = 0.5 * source_losses + 0.25 * t2s_mix_losses + 0.25 * s2t_mix_losses
-                    unite_loss = 0.25 * t2s_mix_losses + 0.75 * s2t_mix_losses
+                    unite_loss = 0.6 * t2s_mix_losses + 0.4 * s2t_mix_losses
                     unite_loss_dict = t2s_mix_loss_dict
                 else:
                     ''' use mini batch loss ,one batch data=source+s2t+t2s ''' 
